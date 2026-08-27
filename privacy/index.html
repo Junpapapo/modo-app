@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Modo (mōdo)</title>
+  <meta name="description" content="Official Privacy Policy for Modo (mōdo) - Privacy-first smart note-taking application.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #FBFAF6;
+      --bg-surface: #FFFFFF;
+      --bg-subtle: #F4F1EA;
+      --text-primary: #1C1917;
+      --text-secondary: #57534E;
+      --text-muted: #78716C;
+      --accent-coral: #E76F51;
+      --accent-sage: #2A9D8F;
+      --accent-charcoal: #264653;
+      --border-color: #E7E5E4;
+      --border-light: #F0EDE6;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+      --shadow-md: 0 4px 16px -2px rgba(28,25,23,0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+      padding: 36px 16px 64px;
+    }
+
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation Header */
+    .top-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--accent-coral), #F4A261);
+      color: #FFFFFF;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 20px;
+      box-shadow: 0 4px 12px rgba(231, 111, 81, 0.25);
+    }
+
+    .brand-name {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .home-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-coral);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      transition: all 0.2s ease;
+    }
+
+    .home-link:hover {
+      background: var(--accent-coral);
+      color: #FFFFFF;
+      border-color: var(--accent-coral);
+    }
+
+    /* Meta Info Card */
+    .meta-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .page-title {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .sub-title {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .lang-tabs {
+      display: inline-flex;
+      background: var(--bg-subtle);
+      padding: 4px;
+      border-radius: 30px;
+      gap: 4px;
+    }
+
+    .tab-btn {
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--bg-surface);
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Content Cards */
+    .content-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px 36px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .badge-pill {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      background: rgba(42, 157, 143, 0.12);
+      color: var(--accent-sage);
+    }
+
+    h2 {
+      font-size: 19px;
+      font-weight: 700;
+      margin: 28px 0 12px;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 8px;
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 18px 0 8px;
+      color: var(--text-primary);
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    ul {
+      margin: 8px 0 16px 20px;
+    }
+
+    li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .highlight-banner {
+      background: linear-gradient(135deg, rgba(42, 157, 143, 0.08), rgba(231, 111, 81, 0.05));
+      border-left: 4px solid var(--accent-sage);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14.5px;
+      color: var(--text-primary);
+    }
+
+    .highlight-banner strong {
+      color: var(--accent-charcoal);
+    }
+
+    .contact-box {
+      background: var(--bg-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-top: 16px;
+    }
+
+    .contact-box p {
+      margin-bottom: 4px;
+    }
+
+    a {
+      color: var(--accent-coral);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Top Navigation Header -->
+    <header class="top-header">
+      <a href="../index.html" class="brand-link">
+        <div class="brand-icon">M</div>
+        <div class="brand-name">Modo (mōdo)</div>
+      </a>
+      <a href="../index.html" class="home-link">← App Home</a>
+    </header>
+
+    <!-- Meta Info Card -->
+    <div class="meta-card">
+      <h1 class="page-title">Privacy Policy</h1>
+      <div class="sub-title">개인정보처리방침 — Effective & Last Updated: August 27, 2026</div>
+      <div class="lang-tabs">
+        <a href="#lang-en" class="tab-btn active" id="btn-en" onclick="showLang('en'); return false;">English (EN)</a>
+        <a href="#lang-ko" class="tab-btn" id="btn-ko" onclick="showLang('ko'); return false;">한국어 (KO)</a>
+      </div>
+    </div>
+
+    <!-- English Content Card -->
+    <main id="section-en" class="content-card">
+      <div class="badge-pill">Official Store Policy</div>
+      
+      <h2>1. Introduction & Core Principle</h2>
+      <p>This Privacy Policy applies to the <strong>Modo (mōdo)</strong> mobile application, developed and operated by <strong>Jun Workspace</strong> ("we", "us", or "our").</p>
+      
+      <div class="highlight-banner">
+        <strong>🔒 100% Local-First Architecture Guarantee:</strong><br>
+        Modo is designed from the ground up to respect your privacy. All your notes, audio recordings, scanned receipts, attachments, and settings are stored locally on your device in an embedded SQLite database. <strong>We do not transmit, sync, host, or sell your personal note content to any cloud or remote servers.</strong>
+      </div>
+
+      <h2>2. Device Permissions & How They Are Used</h2>
+      <p>Modo only requests standard operating system permissions that are strictly necessary for interactive features you explicitly trigger:</p>
+      <ul>
+        <li><strong>Camera (<code>android.permission.CAMERA</code> / <code>NSCameraUsageDescription</code>):</strong> Used exclusively on-device when you scan ISBN barcodes, QR codes, receipts, and physical documents to attach them to your notes. Images are never uploaded to any remote server.</li>
+        <li><strong>Microphone & Speech Recognition (<code>android.permission.RECORD_AUDIO</code> / <code>NSMicrophoneUsageDescription</code>):</strong> Used only when you tap the voice note or instant speech transcription feature. Audio transcription is processed on-device or via official system speech services.</li>
+        <li><strong>Photo Library & Storage:</strong> Used solely to allow you to select and attach existing pictures or files to your notes.</li>
+        <li><strong>Biometric Authentication (Fingerprint / Face ID):</strong> Handled 100% on-device by your smartphone's hardware Secure Enclave to verify app lock. Biometric data is never accessible by Modo.</li>
+      </ul>
+
+      <h2>3. Third-Party Services & Advertising</h2>
+      <p>Modo is a free application supported by non-intrusive advertisements. We integrate the official <strong>Google AdMob (Google Mobile Ads SDK)</strong>:</p>
+      <ul>
+        <li>Google AdMob may collect standard non-identifying diagnostic information, device identifiers (such as Google Advertising ID or IDFA), and general crash metrics to serve personalized or non-personalized ads and combat fraud.</li>
+        <li>To learn how Google manages ad data, visit <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google Advertising & Privacy Policy</a>.</li>
+      </ul>
+
+      <h2>4. Data Retention, Backup, and Deletion</h2>
+      <p>Because all data lives on your device, you have complete control over its retention:</p>
+      <ul>
+        <li>Deleting a note inside Modo instantly and permanently erases it from your device database.</li>
+        <li>Uninstalling or clearing app storage erases all local data immediately.</li>
+      </ul>
+
+      <h2>5. Children's Privacy (COPPA)</h2>
+      <p>Modo does not knowingly collect or solicit personal data from children under the age of 13. The app is general-purpose productivity software.</p>
+
+      <h2>6. Developer Contact Information</h2>
+      <p>If you have any questions, feedback, or inquiries regarding this Privacy Policy, please contact us:</p>
+      <div class="contact-box">
+        <p><strong>Developer:</strong> Jun Workspace</p>
+        <p><strong>Lead Email:</strong> <a href="mailto:shingeo@gmail.com">shingeo@gmail.com</a></p>
+        <p><strong>Application:</strong> Modo (mōdo) Note & Scanner</p>
+      </div>
+    </main>
+
+    <!-- Korean Content Card -->
+    <main id="section-ko" class="content-card" style="display: none;">
+      <div class="badge-pill">스토어 공식 개인정보 정책</div>
+      
+      <h2>1. 개요 및 핵심 개인정보 보호 원칙</h2>
+      <p>본 개인정보처리방침은 <strong>Jun Workspace</strong>(이하 "개발자")가 개발 및 제공하는 스마트 메모 및 생산성 애플리케이션 <strong>Modo (mōdo)</strong>(이하 "앱")에 적용됩니다.</p>
+      
+      <div class="highlight-banner">
+        <strong>🔒 100% 기기 로컬 저장(Local-First) 보장:</strong><br>
+        Modo는 사용자의 사생활 보호를 최우선으로 설계되었습니다. 사용자가 작성한 모든 텍스트 메모, 음성 녹음, 도서/영수증 스캔 파일, 사진 첨부물은 외부 서버로 전송되지 않고 <strong>사용자의 스마트폰 로컬 SQLite 데이터베이스에만 안전하게 보관</strong>됩니다.
+      </div>
+
+      <h2>2. 기기 접근 권한 및 이용 목적</h2>
+      <p>Modo는 사용자가 직접 실행하는 기능에 한해 최소한의 필수 권한만 요청합니다:</p>
+      <ul>
+        <li><strong>카메라 권한:</strong> 도서 바코드(ISBN), QR코드, 영수증 및 문서 스캔 기능을 사용할 때만 실행되며, 촬영된 이미지는 기기 내에만 저장됩니다.</li>
+        <li><strong>마이크 및 음성 인식 권한:</strong> 음성 메모 녹음 및 음성-텍스트 실시간 변환(STT)을 실행할 때만 음성을 입력받으며, 외부에 저장되지 않습니다.</li>
+        <li><strong>사진/미디어 접근 권한:</strong> 사용자가 메모에 사진을 첨부하고자 할 때만 앨범에 접근합니다.</li>
+        <li><strong>생체 인증(지문/Face ID):</strong> 앱 잠금 해제를 위해 스마트폰 보안 영역(Secure Enclave)에서만 독립적으로 인증을 수행합니다.</li>
+      </ul>
+
+      <h2>3. 제3자 광고 서비스 (Google AdMob)</h2>
+      <p>Modo는 무료 앱으로 운영되며, <strong>Google AdMob SDK</strong>를 통해 배너 및 전면 광고를 게재합니다.</p>
+      <ul>
+        <li>구글 AdMob은 맞춤형/비맞춤형 광고 송출 및 부정 트래픽 방지를 위해 기기 식별자(광고 ID) 및 앱 진단 로그를 자동으로 수집할 수 있습니다.</li>
+        <li>자세한 내용은 <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google 광고 정책 안내</a>를 참조하세요.</li>
+      </ul>
+
+      <h2>4. 데이터의 보유 및 파기</h2>
+      <p>모든 데이터는 사용자의 스마트폰 로컬에만 존재하므로 앱 내에서 메모를 삭제하면 즉시 영구 삭제되며, 앱을 삭제(언인스톨)하면 모든 로컬 데이터가 완전히 파기됩니다.</p>
+
+      <h2>5. 개발자 정보 및 문의처</h2>
+      <div class="contact-box">
+        <p><strong>개발자/운영자:</strong> Jun Workspace</p>
+        <p><strong>문의 이메일:</strong> <a href="mailto:shingeo@gmail.com">shingeo@gmail.com</a></p>
+        <p><strong>지원 앱:</strong> Modo (mōdo)</p>
+      </div>
+    </main>
+
+    <footer>
+      &copy; 2026 Modo (mōdo) — Jun Workspace. All rights reserved.
+    </footer>
+
+  </div>
+
+  <script>
+    function showLang(lang) {
+      const secEn = document.getElementById('section-en');
+      const secKo = document.getElementById('section-ko');
+      const btnEn = document.getElementById('btn-en');
+      const btnKo = document.getElementById('btn-ko');
+
+      if (lang === 'ko') {
+        secEn.style.display = 'none';
+        secKo.style.display = 'block';
+        btnEn.classList.remove('active');
+        btnKo.classList.add('active');
+      } else {
+        secEn.style.display = 'block';
+        secKo.style.display = 'none';
+        btnEn.classList.add('active');
+        btnKo.classList.remove('active');
+      }
+    }
+  </script>
+</body>
+</html>
