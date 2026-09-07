@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modo (mōdo) — Mindful Notes, Effortless Clarity</title>
-  <meta name="description" content="Modo (mōdo) is a privacy-first smart note-taking and document scanning app with 100% local SQLite storage.">
+  <meta name="description" content="Modo (mōdo) is a privacy-first smart note-taking and document scanning app with 100% local SQLite storage, dual home views, and bespoke live widgets.">
+  <link rel="icon" type="image/webp" href="asset/favicon.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
@@ -13,7 +14,8 @@
       --bg-base: #FBFAF6;
       --bg-surface: #FFFFFF;
       --bg-card: #FFFFFF;
-      --bg-subtle: #F5F2EB;
+      --bg-subtle: #F4F0E6;
+      --bg-hover: #EFE9DC;
       --text-primary: #1C1917;
       --text-secondary: #57534E;
       --text-muted: #78716C;
@@ -21,118 +23,67 @@
       --accent-coral-hover: #D95C3D;
       --accent-sage: #2A9D8F;
       --accent-charcoal: #264653;
-      --border-color: #EAE6DF;
+      --border-color: #E7E3D8;
+      --border-subtle: #EFECE4;
       --radius-sm: 8px;
       --radius-md: 14px;
-      --radius-lg: 24px;
+      --radius-lg: 22px;
+      --radius-xl: 32px;
       --radius-full: 9999px;
       --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
-      --shadow-md: 0 10px 25px -3px rgba(28,25,23,0.05);
-      --shadow-lg: 0 20px 35px -5px rgba(231,111,81,0.12);
+      --shadow-md: 0 8px 24px -4px rgba(28,25,23,0.06);
+      --shadow-lg: 0 20px 40px -8px rgba(28,25,23,0.1);
+      --shadow-glow: 0 12px 30px -4px rgba(231,111,81,0.22);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background-color: var(--bg-base);
       color: var(--text-primary);
       font-family: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.6;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
-
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
     /* Top Navigation */
     .navbar {
-      padding: 24px 0;
+      padding: 20px 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      border-bottom: 1px solid var(--border-subtle);
     }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .brand-icon {
-      width: 44px;
-      height: 44px;
-      background: linear-gradient(135deg, var(--accent-coral), #F4A261);
-      color: #FFFFFF;
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 22px;
-      box-shadow: 0 4px 14px rgba(231,111,81,0.28);
-    }
-
-    .brand-title {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .nav-link {
-      font-size: 14.5px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-link:hover {
-      color: var(--accent-coral);
-    }
-
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand-logo-img { width: 36px; height: 36px; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); object-fit: contain; }
+    .brand-wordmark-img { height: 24px; width: auto; object-fit: contain; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-link { font-size: 14.5px; font-weight: 600; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--accent-coral); }
     .nav-cta {
-      padding: 10px 20px;
+      padding: 9px 20px;
       border-radius: var(--radius-full);
-      background: var(--accent-coral);
+      background: var(--text-primary);
       color: #FFFFFF;
       font-size: 14px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(231,111,81,0.25);
+      box-shadow: var(--shadow-sm);
       transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
-
-    .nav-cta:hover {
-      background: var(--accent-coral-hover);
-      transform: translateY(-1px);
-    }
+    .nav-cta:hover { background: #000000; transform: translateY(-1px); box-shadow: var(--shadow-md); }
 
     /* Hero Section */
-    .hero-section {
-      padding: 72px 0 64px;
-      text-align: center;
-    }
-
+    .hero-section { padding: 64px 0 48px; text-align: center; }
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 16px;
+      padding: 6px 18px;
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-full);
@@ -142,99 +93,98 @@
       margin-bottom: 24px;
       box-shadow: var(--shadow-sm);
     }
-
+    .hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-sage); }
     .hero-h1 {
-      font-size: clamp(38px, 6vw, 60px);
+      font-size: clamp(38px, 6vw, 62px);
       font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
+      letter-spacing: -0.035em;
+      line-height: 1.14;
       color: var(--text-primary);
       margin-bottom: 20px;
     }
-
     .hero-h1 span {
-      background: linear-gradient(135deg, var(--accent-coral), #E76F51, #2A9D8F);
+      background: linear-gradient(135deg, var(--accent-coral), #F4A261, #2A9D8F);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     .hero-p {
-      font-size: clamp(17px, 2vw, 20px);
+      font-size: clamp(16px, 2vw, 19.5px);
       color: var(--text-secondary);
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto 36px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
-
     .cta-buttons {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 16px;
       flex-wrap: wrap;
+      margin-bottom: 56px;
     }
-
     .store-btn {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
-      padding: 12px 24px;
+      gap: 10px;
+      padding: 13px 26px;
       background: var(--text-primary);
       color: #FFFFFF;
       border-radius: var(--radius-md);
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 15px;
       transition: all 0.2s ease;
       box-shadow: var(--shadow-md);
     }
-
-    .store-btn:hover {
-      transform: translateY(-2px);
-      background: #000000;
-    }
-
+    .store-btn:hover { transform: translateY(-2px); background: #000000; box-shadow: var(--shadow-lg); }
     .store-btn-sec {
       background: var(--bg-surface);
       color: var(--text-primary);
       border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
     }
+    .store-btn-sec:hover { background: var(--bg-subtle); border-color: var(--text-secondary); box-shadow: var(--shadow-md); }
 
-    .store-btn-sec:hover {
-      background: var(--bg-subtle);
-      border-color: var(--text-secondary);
+    /* Showcase Frame */
+    .showcase-container {
+      position: relative;
+      max-width: 980px;
+      margin: 0 auto 72px;
+      border-radius: var(--radius-xl);
+      padding: 12px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(244,240,230,0.6));
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
     }
+    .showcase-img { width: 100%; height: auto; border-radius: var(--radius-lg); display: block; box-shadow: var(--shadow-md); }
+    .floating-pill {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-md);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      animation: float 4s ease-in-out infinite;
+    }
+    .floating-pill-left { bottom: 24px; left: -12px; }
+    .floating-pill-right { top: 24px; right: -12px; animation-delay: 2s; }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @media (max-width: 768px) { .floating-pill { display: none; } }
 
     /* Features Grid */
-    .features-section {
-      padding: 64px 0;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .section-title {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-
-    .section-desc {
-      font-size: 16px;
-      color: var(--text-secondary);
-      max-width: 540px;
-      margin: 0 auto;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
+    .features-section { padding: 48px 0 64px; }
+    .section-header { text-align: center; margin-bottom: 48px; }
+    .section-subtitle { font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-coral); margin-bottom: 8px; }
+    .section-title { font-size: clamp(28px, 4vw, 36px); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 12px; }
+    .section-desc { font-size: 16px; color: var(--text-secondary); max-width: 580px; margin: 0 auto; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
     .feature-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -242,15 +192,11 @@
       padding: 32px;
       box-shadow: var(--shadow-sm);
       transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
     }
-
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(231,111,81,0.3);
-    }
-
-    .feature-icon {
+    .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(231,111,81,0.35); }
+    .feature-icon-wrapper {
       width: 52px;
       height: 52px;
       background: var(--bg-subtle);
@@ -258,178 +204,185 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 26px;
       margin-bottom: 20px;
+      border: 1px solid var(--border-subtle);
     }
-
-    .feature-title {
-      font-size: 19px;
-      font-weight: 700;
-      margin-bottom: 10px;
-      letter-spacing: -0.01em;
-    }
-
-    .feature-text {
-      font-size: 15px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
+    .feature-3d-icon { width: 38px; height: 38px; object-fit: contain; }
+    .feature-title { font-size: 19px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.015em; }
+    .feature-text { font-size: 14.5px; color: var(--text-secondary); line-height: 1.6; }
 
     /* Philosophy Banner */
     .banner-box {
       background: linear-gradient(135deg, #264653, #1D3557);
       color: #FFFFFF;
-      border-radius: var(--radius-lg);
-      padding: 48px 40px;
+      border-radius: var(--radius-xl);
+      padding: 56px 40px;
       text-align: center;
-      margin: 64px 0;
+      margin: 48px 0 64px;
       box-shadow: var(--shadow-lg);
     }
-
-    .banner-title {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 14px;
+    .banner-title { font-size: clamp(26px, 3.5vw, 34px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .banner-desc { font-size: 16.5px; color: #E2E8F0; max-width: 640px; margin: 0 auto 32px; line-height: 1.65; }
+    .banner-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: var(--radius-full);
+      background: var(--accent-coral);
+      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: var(--shadow-glow);
+      transition: all 0.2s ease;
     }
-
-    .banner-desc {
-      font-size: 16px;
-      color: #E0E7FF;
-      max-width: 620px;
-      margin: 0 auto 28px;
-      line-height: 1.6;
-    }
+    .banner-cta:hover { background: var(--accent-coral-hover); transform: translateY(-2px); }
 
     /* Footer */
-    footer {
-      border-top: 1px solid var(--border-color);
-      padding: 48px 0 36px;
-      margin-top: 48px;
-    }
-
-    .footer-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .footer-copy {
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .footer-nav {
-      display: flex;
-      gap: 24px;
-    }
-
-    .footer-nav a {
-      font-size: 14px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .footer-nav a:hover {
-      color: var(--accent-coral);
-    }
+    footer { border-top: 1px solid var(--border-color); padding: 48px 0 36px; margin-top: 48px; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer-brand { display: flex; align-items: center; gap: 8px; }
+    .footer-copy { font-size: 13.5px; color: var(--text-muted); }
+    .footer-nav { display: flex; gap: 24px; }
+    .footer-nav a { font-size: 14px; color: var(--text-secondary); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--accent-coral); }
   </style>
 </head>
 <body>
-
   <div class="container">
-    
     <!-- Top Navigation -->
     <nav class="navbar">
       <a href="index.html" class="nav-brand">
-        <div class="brand-icon">M</div>
-        <span class="brand-title">Modo</span>
+        <img src="asset/logo_symbol.webp" alt="Modo Symbol" class="brand-logo-img">
+        <img src="asset/logo_wordmark_dark.webp" alt="Modo Wordmark" class="brand-wordmark-img">
       </a>
       <div class="nav-links">
         <a href="#features" class="nav-link">Features</a>
         <a href="privacy/" class="nav-link">Privacy</a>
         <a href="terms/" class="nav-link">Terms</a>
-        <a href="privacy/" class="nav-cta">Privacy Policy →</a>
+        <a href="https://play.google.com/store/apps/details?id=com.junpapapo.modo" class="nav-cta" target="_blank" rel="noopener">
+          <span>Get Modo</span> →
+        </a>
       </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero-section">
-      <div class="hero-badge">🔒 100% Local-First Note Architecture</div>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span>100% On-Device Local SQLite Architecture</span>
+      </div>
       <h1 class="hero-h1">Mindful Notes,<br><span>Effortless Clarity.</span></h1>
       <p class="hero-p">
-        A calm, distraction-free smart note application with instant voice memos, camera barcode/document scanning, and local SQLite security.
+        A calm, distraction-free smart note application with instant voice memos, camera barcode/document scanning, customizable live widgets, and absolute data sovereignty.
       </p>
       <div class="cta-buttons">
         <a href="https://play.google.com/store/apps/details?id=com.junpapapo.modo" class="store-btn" target="_blank" rel="noopener">
-          <span>🤖 Google Play Store</span>
+          <img src="asset/icons/icon_home.webp" alt="" style="width: 20px; height: 20px;">
+          <span>Google Play Store</span>
         </a>
         <a href="privacy/" class="store-btn store-btn-sec">
-          <span>🛡️ Privacy Policy</span>
+          <img src="asset/icons/icon_shield.webp" alt="" style="width: 20px; height: 20px;">
+          <span>Privacy & Terms Policy</span>
         </a>
+      </div>
+
+      <!-- Main Visual Showcase -->
+      <div class="showcase-container">
+        <img src="asset/modo_showcase_en_5in1.jpg" alt="Modo 5-in-1 App Showcase" class="showcase-img">
+        <div class="floating-pill floating-pill-left">
+          <img src="asset/icons/icon_lock.webp" alt="" style="width: 18px; height: 18px;">
+          <span>Zero Server Uploads • 100% On-Device</span>
+        </div>
+        <div class="floating-pill floating-pill-right">
+          <img src="asset/icons/icon_speeddial.webp" alt="" style="width: 18px; height: 18px;">
+          <span>Dual Home & 3-Sec Quick Note</span>
+        </div>
       </div>
     </section>
 
     <!-- Features Section -->
     <section id="features" class="features-section">
       <div class="section-header">
-        <h2 class="section-title">Crafted for Peace of Mind</h2>
-        <p class="section-desc">Every detail is designed to make note capture instant, private, and delightful.</p>
+        <div class="section-subtitle">Crafted for Peace of Mind</div>
+        <h2 class="section-title">Designed for Focus and Speed</h2>
+        <p class="section-desc">Every micro-interaction is engineered to make capturing, organizing, and finding your ideas effortless.</p>
       </div>
 
       <div class="features-grid">
+        <!-- 1. Local Privacy -->
         <div class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h3 class="feature-title">100% On-Device Privacy</h3>
-          <p class="feature-text">Your notes, voice recordings, and scanned receipts live exclusively on your device SQLite database. Zero external servers.</p>
+          <div class="feature-icon-wrapper">
+            <img src="asset/icons/icon_database.webp" alt="Local SQLite" class="feature-3d-icon">
+          </div>
+          <h3 class="feature-title">100% On-Device Sovereignty</h3>
+          <p class="feature-text">Your notes, voice recordings, and attachments live exclusively on your phone's SQLite database. Zero external trackers or vendor locks.</p>
         </div>
 
+        <!-- 2. Dual Home Mode -->
         <div class="feature-card">
-          <div class="feature-icon">🎙️</div>
-          <h3 class="feature-title">Instant Voice Notes</h3>
-          <p class="feature-text">Capture spontaneous thoughts in seconds with embedded audio recording and real-time speech-to-text transcription.</p>
+          <div class="feature-icon-wrapper">
+            <img src="asset/icons/icon_home.webp" alt="Dual Home Modes" class="feature-3d-icon">
+          </div>
+          <h3 class="feature-title">Dual Home & Quick View</h3>
+          <p class="feature-text">Seamlessly toggle between standard linear feed and high-density 2-column Quick View grid with an intuitive header swipe gesture.</p>
         </div>
 
+        <!-- 3. L-Speed Dial -->
         <div class="feature-card">
-          <div class="feature-icon">📷</div>
+          <div class="feature-icon-wrapper">
+            <img src="asset/icons/icon_speeddial.webp" alt="Speed Dial" class="feature-3d-icon">
+          </div>
+          <h3 class="feature-title">L-Speed Dial & 3-Sec Note</h3>
+          <p class="feature-text">Tap the floating pebble for instant 3-second quick note capture; long-press to jump straight into Schedule Hub and interactive calendar.</p>
+        </div>
+
+        <!-- 4. Crystal Voice Memo -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <img src="asset/icons/icon_voice.webp" alt="Voice Memo" class="feature-3d-icon">
+          </div>
+          <h3 class="feature-title">Voice Notes & On-Device STT</h3>
+          <p class="feature-text">Capture fleeting thoughts hands-free with high-fidelity audio waveform recording and real-time speech-to-text dictation.</p>
+        </div>
+
+        <!-- 5. Camera & Barcode Scanner -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <img src="asset/icons/icon_scanner.webp" alt="Barcode & Doc Scanner" class="feature-3d-icon">
+          </div>
           <h3 class="feature-title">Smart Barcode & Doc Scanner</h3>
-          <p class="feature-text">Scan book ISBN barcodes, QR codes, receipts, and documents directly into your notes without opening other apps.</p>
+          <p class="feature-text">Point your camera to scan book ISBN barcodes, QR codes, receipts, and documents directly into notes without third-party utilities.</p>
         </div>
 
+        <!-- 6. Widget Studio & Neon HUD -->
         <div class="feature-card">
-          <div class="feature-icon">🪨</div>
-          <h3 class="feature-title">Pebble Aesthetic & Stickers</h3>
-          <p class="feature-text">Warm, tactile UI inspired by river stones, custom color stickers, and micro-interactions that feel natural.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3 class="feature-title">Instant Multilingual Search</h3>
-          <p class="feature-text">Find any idea instantly across titles, tags, and body text with high-performance SQLite FTS indexing.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">🔐</div>
-          <h3 class="feature-title">Biometric App Lock</h3>
-          <p class="feature-text">Protect sensitive journals and personal documents with PIN lock and hardware Face ID / Fingerprint authentication.</p>
+          <div class="feature-icon-wrapper">
+            <img src="asset/icons/icon_widget.webp" alt="Widget Studio" class="feature-3d-icon">
+          </div>
+          <h3 class="feature-title">Widget Studio & Neon HUD</h3>
+          <p class="feature-text">Bring your notes to your home screen with custom live clock frames, D-Day milestone counters, and responsive sticky note widgets.</p>
         </div>
       </div>
     </section>
 
     <!-- Philosophy Banner -->
     <div class="banner-box">
-      <h2 class="banner-title">Your thoughts belong to you.</h2>
-      <p class="banner-desc">No accounts required, no tracking, and no subscriptions to get started. Just open Modo and capture what matters.</p>
-      <a href="privacy/" class="nav-cta" style="font-size: 15px; padding: 12px 28px;">Read Our Privacy Promise</a>
+      <h2 class="banner-title">Your thoughts belong solely to you.</h2>
+      <p class="banner-desc">No mandatory accounts, no telemetry, and no cloud subscriptions to get started. Just open Modo and capture what matters in complete tranquility.</p>
+      <a href="privacy/" class="banner-cta">
+        <img src="asset/icons/icon_shield.webp" alt="" style="width: 18px; height: 18px;">
+        <span>Read Our Privacy Guarantee</span>
+      </a>
     </div>
 
     <!-- Footer -->
     <footer>
       <div class="footer-row">
-        <div class="footer-copy">
-          &copy; 2026 Modo (mōdo) — Jun Workspace. All rights reserved.
+        <div class="footer-brand">
+          <img src="asset/logo_symbol.webp" alt="Modo" style="width: 24px; height: 24px; border-radius: 4px;">
+          <span class="footer-copy">&copy; 2026 Modo (mōdo) — Jun Workspace. All rights reserved.</span>
         </div>
         <div class="footer-nav">
           <a href="privacy/">Privacy Policy</a>
@@ -438,8 +391,6 @@
         </div>
       </div>
     </footer>
-
   </div>
-
 </body>
 </html>

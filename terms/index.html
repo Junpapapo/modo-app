@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service — Modo (mōdo)</title>
   <meta name="description" content="Official Terms of Service for Modo (mōdo) mobile application.">
+  <link rel="icon" type="image/webp" href="../asset/favicon.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
@@ -26,20 +27,65 @@
       --shadow-md: 0 4px 16px -2px rgba(28,25,23,0.06);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: var(--bg-base); color: var(--text-primary); font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif; line-height: 1.7; padding: 36px 16px 64px; }
-    .container { max-width: 840px; margin: 0 auto; }
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+      line-height: 1.7;
+      padding: 36px 16px 64px;
+    }
+    .container { max-width: 860px; margin: 0 auto; }
     .top-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
-    .brand-link { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
-    .brand-icon { width: 42px; height: 42px; background: linear-gradient(135deg, var(--accent-coral), #F4A261); color: #FFF; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; }
-    .brand-name { font-size: 20px; font-weight: 800; }
-    .home-link { font-size: 14px; font-weight: 600; color: var(--accent-coral); text-decoration: none; padding: 8px 16px; border-radius: 20px; background: var(--bg-surface); border: 1px solid var(--border-color); }
-    .meta-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 28px 32px; margin-bottom: 24px; box-shadow: var(--shadow-sm); }
-    .content-card { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 36px; margin-bottom: 24px; box-shadow: var(--shadow-md); }
+    .brand-link { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+    .brand-logo-img { width: 36px; height: 36px; border-radius: var(--radius-sm); object-fit: contain; }
+    .brand-wordmark-img { height: 22px; width: auto; object-fit: contain; }
+    .home-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-coral);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      transition: all 0.2s ease;
+    }
+    .home-link:hover { background: var(--accent-coral); color: #FFFFFF; border-color: var(--accent-coral); }
+    .meta-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .content-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-md);
+    }
     h1 { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
     h2 { font-size: 19px; font-weight: 700; margin: 24px 0 10px; border-bottom: 1px solid #F0EDE6; padding-bottom: 8px; }
     h2:first-of-type { margin-top: 0; }
     p, li { font-size: 15px; color: var(--text-secondary); margin-bottom: 10px; }
     ul { margin-left: 20px; margin-bottom: 16px; }
+    .lang-tabs { display: inline-flex; background: var(--bg-subtle); padding: 4px; border-radius: 30px; gap: 4px; margin-top: 12px; }
+    .tab-btn {
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-secondary);
+      transition: all 0.2s;
+    }
+    .tab-btn.active { background: var(--bg-surface); color: var(--text-primary); box-shadow: var(--shadow-sm); }
+    .contact-box { background: var(--bg-subtle); border-radius: var(--radius-md); padding: 20px; margin-top: 16px; }
     footer { text-align: center; font-size: 13px; color: var(--text-muted); margin-top: 40px; }
   </style>
 </head>
@@ -47,37 +93,100 @@
   <div class="container">
     <header class="top-header">
       <a href="../index.html" class="brand-link">
-        <div class="brand-icon">M</div>
-        <div class="brand-name">Modo (mōdo)</div>
+        <img src="../asset/logo_symbol.webp" alt="Modo" class="brand-logo-img">
+        <img src="../asset/logo_wordmark_dark.webp" alt="Modo" class="brand-wordmark-img">
       </a>
       <a href="../index.html" class="home-link">← App Home</a>
     </header>
 
     <div class="meta-card">
       <h1>Terms of Service</h1>
-      <p style="color: var(--text-muted); font-size: 14px;">서비스 이용약관 — Effective: August 27, 2026</p>
+      <p style="color: var(--text-muted); font-size: 14px;">서비스 이용약관 — Effective & Last Updated: September 7, 2026</p>
+      <div class="lang-tabs">
+        <button class="tab-btn active" id="btn-en" onclick="showLang('en')">English (EN)</button>
+        <button class="tab-btn" id="btn-ko" onclick="showLang('ko')">한국어 (KO)</button>
+      </div>
     </div>
 
-    <main class="content-card">
+    <!-- English Terms -->
+    <main id="section-en" class="content-card">
       <h2>1. Acceptance of Terms</h2>
-      <p>By downloading, installing, or using the <strong>Modo (mōdo)</strong> application provided by <strong>Jun Workspace</strong>, you agree to be bound by these Terms of Service. If you do not agree, please do not use the app.</p>
+      <p>By downloading, installing, or using the <strong>Modo (mōdo)</strong> application provided by <strong>Jun Workspace</strong> ("we", "us", or "our"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please discontinue using the application.</p>
 
       <h2>2. Permissible Use & License</h2>
-      <p>Modo grants you a personal, non-exclusive, non-transferable, revocable license to use the app for personal and lawful productivity purposes.</p>
+      <p>Modo grants you a personal, non-exclusive, non-transferable, revocable license to use the app for personal and lawful productivity purposes in accordance with these Terms.</p>
 
-      <h2>3. Intellectual Property & User Content</h2>
-      <p>You retain 100% ownership and intellectual property rights to all notes, text, recordings, and media created inside your local Modo installation. Because data is stored strictly on your local device, you are responsible for maintaining your own device backups.</p>
+      <h2>3. 100% User Content Ownership</h2>
+      <p>You retain full 100% ownership and intellectual property rights to all notes, text, voice recordings, documents, and media created or stored inside your Modo installation. Jun Workspace claims zero ownership or rights to your data.</p>
 
-      <h2>4. Disclaimers & Limitation of Liability</h2>
-      <p>The app is provided on an "AS IS" and "AS AVAILABLE" basis. While Modo is engineered for high reliability with local SQLite storage, Jun Workspace is not liable for data loss caused by hardware malfunction, OS upgrades, or accidental user deletion.</p>
+      <h2>4. Pro Upgrades, In-App Purchases & Refund Policy</h2>
+      <p>Modo offers an optional Lifetime Pro upgrade that permanently unlocks premium widgets, removes ads, and provides priority capabilities:</p>
+      <ul>
+        <li><strong>Store Billing:</strong> All in-app purchases are securely processed via the official <strong>Google Play Billing</strong> or <strong>Apple App Store In-App Purchase</strong> systems.</li>
+        <li><strong>Refund Policies:</strong> Refund requests are governed strictly by the respective store's refund rules (e.g., Google Play Help Center or Apple Report a Problem portal). Modo does not directly handle payment information or card transactions.</li>
+      </ul>
 
-      <h2>5. Contact Information</h2>
-      <p>For questions regarding these terms, please contact: <a href="mailto:shingeo@gmail.com" style="color: var(--accent-coral);">shingeo@gmail.com</a></p>
+      <h2>5. Disclaimers & Limitation of Liability</h2>
+      <p>The app is provided on an "AS IS" and "AS AVAILABLE" basis. While Modo is engineered for high stability and reliability with on-device SQLite storage, Jun Workspace is not liable for data loss caused by hardware malfunction, operating system updates, or accidental user deletion. Users are encouraged to maintain periodic backups.</p>
+
+      <h2>6. Contact Information</h2>
+      <div class="contact-box">
+        <p><strong>Developer:</strong> Jun Workspace</p>
+        <p><strong>Support Email:</strong> <a href="mailto:shingeo@gmail.com" style="color: var(--accent-coral);">shingeo@gmail.com</a></p>
+      </div>
+    </main>
+
+    <!-- Korean Terms -->
+    <main id="section-ko" class="content-card" style="display: none;">
+      <h2>1. 약관의 동의</h2>
+      <p><strong>Jun Workspace</strong>(이하 "개발자")가 제공하는 <strong>Modo (mōdo)</strong> 애플리케이션(이하 "앱")을 다운로드, 설치 또는 이용함으로써 귀하는 본 이용약관에 동의하게 됩니다. 본 약관에 동의하지 않으실 경우 앱 사용을 중단해 주시기 바랍니다.</p>
+
+      <h2>2. 사용권 부여 및 허용 범위</h2>
+      <p>Modo는 사용자에게 개인적이고 비상업적인 생산성 목적으로 앱을 이용할 수 있는 개인적이고 비독점적이며 양도 불가능한 라이선스를 부여합니다.</p>
+
+      <h2>3. 사용자 콘텐츠의 100% 소유권 보장</h2>
+      <p>사용자가 Modo 내에서 작성하거나 첨부한 모든 텍스트 메모, 음성 녹음, 사진, 스캔 문서 등의 저작권 및 지식재산권은 100% 사용자에게 귀속됩니다. 개발자는 사용자의 콘텐츠에 대해 어떠한 권리도 주장하지 않습니다.</p>
+
+      <h2>4. Pro 인앱 결제 및 환불 정책</h2>
+      <p>Modo는 광고 제거, 프리미엄 위젯 및 비스포크 기능을 영구적으로 이용할 수 있는 평생 Pro 라이선스를 제공합니다:</p>
+      <ul>
+        <li><strong>스토어 표준 결제:</strong> 모든 유료 결제는 <strong>Google Play 인앱 결제</strong> 및 <strong>Apple App Store 인앱 결제</strong> 시스템을 통해 안전하게 처리됩니다.</li>
+        <li><strong>환불 가이드라인:</strong> 디지털 콘텐츠 특성상 환불은 각 앱 마켓(Google Play 고객센터 또는 Apple 문제 신고 포털)의 공식 환불 정책에 따라 진행됩니다. 개발자는 사용자의 금융 정보나 카드 번호를 일체 수집하거나 보관하지 않습니다.</li>
+      </ul>
+
+      <h2>5. 면책 조항 및 데이터 백업</h2>
+      <p>Modo는 안정적인 온디바이스 SQLite 아키텍처로 구현되어 있으나, 기기 고장, 분실, 운영체제 업데이트 또는 사용자의 실수로 인한 데이터 손실에 대해 법률이 허용하는 한도 내에서 책임을 지지 않습니다. 사용자는 Google Drive 백업 등을 활용하여 정기적으로 데이터를 보관하시기를 권장합니다.</p>
+
+      <h2>6. 문의처</h2>
+      <div class="contact-box">
+        <p><strong>운영자:</strong> Jun Workspace</p>
+        <p><strong>고객 문의:</strong> <a href="mailto:shingeo@gmail.com" style="color: var(--accent-coral);">shingeo@gmail.com</a></p>
+      </div>
     </main>
 
     <footer>
       &copy; 2026 Modo (mōdo) — Jun Workspace. All rights reserved.
     </footer>
   </div>
+
+  <script>
+    function showLang(lang) {
+      const secEn = document.getElementById('section-en');
+      const secKo = document.getElementById('section-ko');
+      const btnEn = document.getElementById('btn-en');
+      const btnKo = document.getElementById('btn-ko');
+      if (lang === 'ko') {
+        secEn.style.display = 'none';
+        secKo.style.display = 'block';
+        btnEn.classList.remove('active');
+        btnKo.classList.add('active');
+      } else {
+        secEn.style.display = 'block';
+        secKo.style.display = 'none';
+        btnEn.classList.add('active');
+        btnKo.classList.remove('active');
+      }
+    }
+  </script>
 </body>
 </html>

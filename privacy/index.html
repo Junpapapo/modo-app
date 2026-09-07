@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Modo (mōdo)</title>
   <meta name="description" content="Official Privacy Policy for Modo (mōdo) - Privacy-first smart note-taking application.">
+  <link rel="icon" type="image/webp" href="../asset/favicon.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
@@ -24,16 +25,11 @@
       --radius-sm: 8px;
       --radius-md: 12px;
       --radius-lg: 20px;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
       --shadow-md: 0 4px 16px -2px rgba(28,25,23,0.06);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background-color: var(--bg-base);
       color: var(--text-primary);
@@ -41,48 +37,13 @@
       line-height: 1.7;
       padding: 36px 16px 64px;
     }
-
-    .container {
-      max-width: 840px;
-      margin: 0 auto;
-    }
+    .container { max-width: 860px; margin: 0 auto; }
 
     /* Top Navigation Header */
-    .top-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 28px;
-    }
-
-    .brand-link {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .brand-icon {
-      width: 42px;
-      height: 42px;
-      background: linear-gradient(135deg, var(--accent-coral), #F4A261);
-      color: #FFFFFF;
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 20px;
-      box-shadow: 0 4px 12px rgba(231, 111, 81, 0.25);
-    }
-
-    .brand-name {
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
+    .top-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+    .brand-link { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+    .brand-logo-img { width: 36px; height: 36px; border-radius: var(--radius-sm); object-fit: contain; }
+    .brand-wordmark-img { height: 22px; width: auto; object-fit: contain; }
     .home-link {
       font-size: 14px;
       font-weight: 600;
@@ -94,12 +55,7 @@
       border: 1px solid var(--border-color);
       transition: all 0.2s ease;
     }
-
-    .home-link:hover {
-      background: var(--accent-coral);
-      color: #FFFFFF;
-      border-color: var(--accent-coral);
-    }
+    .home-link:hover { background: var(--accent-coral); color: #FFFFFF; border-color: var(--accent-coral); }
 
     /* Meta Info Card */
     .meta-card {
@@ -110,28 +66,9 @@
       margin-bottom: 24px;
       box-shadow: var(--shadow-sm);
     }
-
-    .page-title {
-      font-size: 26px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 6px;
-    }
-
-    .sub-title {
-      font-size: 15px;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    .lang-tabs {
-      display: inline-flex;
-      background: var(--bg-subtle);
-      padding: 4px;
-      border-radius: 30px;
-      gap: 4px;
-    }
-
+    .page-title { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .sub-title { font-size: 14.5px; color: var(--text-muted); margin-bottom: 16px; }
+    .lang-tabs { display: inline-flex; background: var(--bg-subtle); padding: 4px; border-radius: 30px; gap: 4px; }
     .tab-btn {
       padding: 6px 18px;
       border-radius: 20px;
@@ -141,26 +78,19 @@
       cursor: pointer;
       background: transparent;
       color: var(--text-secondary);
-      text-decoration: none;
       transition: all 0.2s;
     }
-
-    .tab-btn.active {
-      background: var(--bg-surface);
-      color: var(--text-primary);
-      box-shadow: var(--shadow-sm);
-    }
+    .tab-btn.active { background: var(--bg-surface); color: var(--text-primary); box-shadow: var(--shadow-sm); }
 
     /* Content Cards */
     .content-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
-      padding: 36px 36px;
+      padding: 36px;
       margin-bottom: 24px;
       box-shadow: var(--shadow-md);
     }
-
     .badge-pill {
       display: inline-block;
       font-size: 12px;
@@ -173,7 +103,6 @@
       background: rgba(42, 157, 143, 0.12);
       color: var(--accent-sage);
     }
-
     h2 {
       font-size: 19px;
       font-weight: 700;
@@ -183,34 +112,10 @@
       border-bottom: 1px solid var(--border-light);
       padding-bottom: 8px;
     }
-
-    h2:first-of-type {
-      margin-top: 0;
-    }
-
-    h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin: 18px 0 8px;
-      color: var(--text-primary);
-    }
-
-    p {
-      font-size: 15px;
-      color: var(--text-secondary);
-      margin-bottom: 12px;
-    }
-
-    ul {
-      margin: 8px 0 16px 20px;
-    }
-
-    li {
-      font-size: 15px;
-      color: var(--text-secondary);
-      margin-bottom: 8px;
-    }
-
+    h2:first-of-type { margin-top: 0; }
+    p { font-size: 15px; color: var(--text-secondary); margin-bottom: 12px; }
+    ul { margin: 8px 0 16px 20px; }
+    li { font-size: 15px; color: var(--text-secondary); margin-bottom: 8px; }
     .highlight-banner {
       background: linear-gradient(135deg, rgba(42, 157, 143, 0.08), rgba(231, 111, 81, 0.05));
       border-left: 4px solid var(--accent-sage);
@@ -220,63 +125,33 @@
       font-size: 14.5px;
       color: var(--text-primary);
     }
-
-    .highlight-banner strong {
-      color: var(--accent-charcoal);
-    }
-
-    .contact-box {
-      background: var(--bg-subtle);
-      border-radius: var(--radius-md);
-      padding: 20px;
-      margin-top: 16px;
-    }
-
-    .contact-box p {
-      margin-bottom: 4px;
-    }
-
-    a {
-      color: var(--accent-coral);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 40px;
-    }
+    .contact-box { background: var(--bg-subtle); border-radius: var(--radius-md); padding: 20px; margin-top: 16px; }
+    .contact-box p { margin-bottom: 4px; }
+    a { color: var(--accent-coral); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { text-align: center; font-size: 13px; color: var(--text-muted); margin-top: 40px; }
   </style>
 </head>
 <body>
-
   <div class="container">
-    
-    <!-- Top Navigation Header -->
     <header class="top-header">
       <a href="../index.html" class="brand-link">
-        <div class="brand-icon">M</div>
-        <div class="brand-name">Modo (mōdo)</div>
+        <img src="../asset/logo_symbol.webp" alt="Modo" class="brand-logo-img">
+        <img src="../asset/logo_wordmark_dark.webp" alt="Modo" class="brand-wordmark-img">
       </a>
       <a href="../index.html" class="home-link">← App Home</a>
     </header>
 
-    <!-- Meta Info Card -->
     <div class="meta-card">
       <h1 class="page-title">Privacy Policy</h1>
-      <div class="sub-title">개인정보처리방침 — Effective & Last Updated: August 27, 2026</div>
+      <div class="sub-title">개인정보처리방침 — Effective & Last Updated: September 7, 2026</div>
       <div class="lang-tabs">
-        <a href="#lang-en" class="tab-btn active" id="btn-en" onclick="showLang('en'); return false;">English (EN)</a>
-        <a href="#lang-ko" class="tab-btn" id="btn-ko" onclick="showLang('ko'); return false;">한국어 (KO)</a>
+        <button class="tab-btn active" id="btn-en" onclick="showLang('en')">English (EN)</button>
+        <button class="tab-btn" id="btn-ko" onclick="showLang('ko')">한국어 (KO)</button>
       </div>
     </div>
 
-    <!-- English Content Card -->
+    <!-- English Content -->
     <main id="section-en" class="content-card">
       <div class="badge-pill">Official Store Policy</div>
       
@@ -294,28 +169,33 @@
         <li><strong>Camera (<code>android.permission.CAMERA</code> / <code>NSCameraUsageDescription</code>):</strong> Used exclusively on-device when you scan ISBN barcodes, QR codes, receipts, and physical documents to attach them to your notes. Images are never uploaded to any remote server.</li>
         <li><strong>Microphone & Speech Recognition (<code>android.permission.RECORD_AUDIO</code> / <code>NSMicrophoneUsageDescription</code>):</strong> Used only when you tap the voice note or instant speech transcription feature. Audio transcription is processed on-device or via official system speech services.</li>
         <li><strong>Photo Library & Storage:</strong> Used solely to allow you to select and attach existing pictures or files to your notes.</li>
-        <li><strong>Biometric Authentication (Fingerprint / Face ID):</strong> Handled 100% on-device by your smartphone's hardware Secure Enclave to verify app lock. Biometric data is never accessible by Modo.</li>
+        <li><strong>Device Calendar (<code>android.permission.READ_CALENDAR</code> / <code>WRITE_CALENDAR</code>):</strong> Used strictly on-device only when you explicitly opt to sync scheduled notes, milestones, or deadlines with your system calendar.</li>
+        <li><strong>Notifications (<code>android.permission.POST_NOTIFICATIONS</code>):</strong> Used solely to dispatch scheduled reminders for your notes, tasks, and D-Day counter milestones.</li>
+        <li><strong>Biometric Authentication (Fingerprint / Face ID):</strong> Handled 100% on-device by your smartphone's hardware Secure Enclave to verify app lock. Biometric credentials are never stored or accessible by Modo.</li>
       </ul>
 
-      <h2>3. Third-Party Services & Advertising</h2>
+      <h2>3. Cloud Backup (Google Drive OAuth)</h2>
+      <p>If you choose to use the optional Google Drive Cloud Backup feature:</p>
+      <ul>
+        <li>Backups are uploaded strictly and exclusively to your personal Google Drive account's private <code>appDataFolder</code> (an isolated application folder hidden from general Drive files).</li>
+        <li>Jun Workspace does not operate intermediary servers, does not receive, and cannot access your Google authentication tokens, Drive files, or backup archives.</li>
+      </ul>
+
+      <h2>4. Third-Party Services & Advertising</h2>
       <p>Modo is a free application supported by non-intrusive advertisements. We integrate the official <strong>Google AdMob (Google Mobile Ads SDK)</strong>:</p>
       <ul>
         <li>Google AdMob may collect standard non-identifying diagnostic information, device identifiers (such as Google Advertising ID or IDFA), and general crash metrics to serve personalized or non-personalized ads and combat fraud.</li>
         <li>To learn how Google manages ad data, visit <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google Advertising & Privacy Policy</a>.</li>
       </ul>
 
-      <h2>4. Data Retention, Backup, and Deletion</h2>
+      <h2>5. Data Retention, Backup, and Deletion</h2>
       <p>Because all data lives on your device, you have complete control over its retention:</p>
       <ul>
-        <li>Deleting a note inside Modo instantly and permanently erases it from your device database.</li>
-        <li>Uninstalling or clearing app storage erases all local data immediately.</li>
+        <li>Deleting a note inside Modo permanently erases it from your device database immediately.</li>
+        <li>Uninstalling or clearing app storage erases all local data permanently.</li>
       </ul>
 
-      <h2>5. Children's Privacy (COPPA)</h2>
-      <p>Modo does not knowingly collect or solicit personal data from children under the age of 13. The app is general-purpose productivity software.</p>
-
       <h2>6. Developer Contact Information</h2>
-      <p>If you have any questions, feedback, or inquiries regarding this Privacy Policy, please contact us:</p>
       <div class="contact-box">
         <p><strong>Developer:</strong> Jun Workspace</p>
         <p><strong>Lead Email:</strong> <a href="mailto:shingeo@gmail.com">shingeo@gmail.com</a></p>
@@ -323,7 +203,7 @@
       </div>
     </main>
 
-    <!-- Korean Content Card -->
+    <!-- Korean Content -->
     <main id="section-ko" class="content-card" style="display: none;">
       <div class="badge-pill">스토어 공식 개인정보 정책</div>
       
@@ -341,20 +221,29 @@
         <li><strong>카메라 권한:</strong> 도서 바코드(ISBN), QR코드, 영수증 및 문서 스캔 기능을 사용할 때만 실행되며, 촬영된 이미지는 기기 내에만 저장됩니다.</li>
         <li><strong>마이크 및 음성 인식 권한:</strong> 음성 메모 녹음 및 음성-텍스트 실시간 변환(STT)을 실행할 때만 음성을 입력받으며, 외부에 저장되지 않습니다.</li>
         <li><strong>사진/미디어 접근 권한:</strong> 사용자가 메모에 사진을 첨부하고자 할 때만 앨범에 접근합니다.</li>
+        <li><strong>캘린더 권한 (읽기/쓰기):</strong> 사용자가 메모와 연동된 일정 및 D-Day를 기기 기본 캘린더와 동기화하고자 명시적으로 요청할 때만 로컬에서 처리됩니다.</li>
+        <li><strong>알림 권한 (POST_NOTIFICATIONS):</strong> 사용자가 지정한 메모 알림 및 중요한 D-Day 리마인더를 로컬 푸시 알림으로 전달하기 위해서만 사용됩니다.</li>
         <li><strong>생체 인증(지문/Face ID):</strong> 앱 잠금 해제를 위해 스마트폰 보안 영역(Secure Enclave)에서만 독립적으로 인증을 수행합니다.</li>
       </ul>
 
-      <h2>3. 제3자 광고 서비스 (Google AdMob)</h2>
+      <h2>3. 클라우드 백업 (Google Drive OAuth)</h2>
+      <p>사용자가 선택적으로 Google Drive 백업 기능을 이용할 경우:</p>
+      <ul>
+        <li>백업 파일은 사용자의 개인 구글 드라이브 내 앱 전용 격리 폴더(<code>appDataFolder</code>)에만 안전하게 저장됩니다.</li>
+        <li>개발자의 외부 중계 서버는 존재하지 않으며, 개발자는 사용자의 인증 토큰이나 드라이브 파일에 접근할 수 없습니다.</li>
+      </ul>
+
+      <h2>4. 제3자 광고 서비스 (Google AdMob)</h2>
       <p>Modo는 무료 앱으로 운영되며, <strong>Google AdMob SDK</strong>를 통해 배너 및 전면 광고를 게재합니다.</p>
       <ul>
         <li>구글 AdMob은 맞춤형/비맞춤형 광고 송출 및 부정 트래픽 방지를 위해 기기 식별자(광고 ID) 및 앱 진단 로그를 자동으로 수집할 수 있습니다.</li>
         <li>자세한 내용은 <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google 광고 정책 안내</a>를 참조하세요.</li>
       </ul>
 
-      <h2>4. 데이터의 보유 및 파기</h2>
+      <h2>5. 데이터의 보유 및 파기</h2>
       <p>모든 데이터는 사용자의 스마트폰 로컬에만 존재하므로 앱 내에서 메모를 삭제하면 즉시 영구 삭제되며, 앱을 삭제(언인스톨)하면 모든 로컬 데이터가 완전히 파기됩니다.</p>
 
-      <h2>5. 개발자 정보 및 문의처</h2>
+      <h2>6. 개발자 정보 및 문의처</h2>
       <div class="contact-box">
         <p><strong>개발자/운영자:</strong> Jun Workspace</p>
         <p><strong>문의 이메일:</strong> <a href="mailto:shingeo@gmail.com">shingeo@gmail.com</a></p>
@@ -365,7 +254,6 @@
     <footer>
       &copy; 2026 Modo (mōdo) — Jun Workspace. All rights reserved.
     </footer>
-
   </div>
 
   <script>
@@ -374,7 +262,6 @@
       const secKo = document.getElementById('section-ko');
       const btnEn = document.getElementById('btn-en');
       const btnKo = document.getElementById('btn-ko');
-
       if (lang === 'ko') {
         secEn.style.display = 'none';
         secKo.style.display = 'block';
