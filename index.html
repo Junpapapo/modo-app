@@ -76,24 +76,89 @@
       gap: 6px;
     }
     .nav-cta:hover { background: #000000; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .nav-store-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-store-btn {
+      padding: 7px 15px;
+      border-radius: var(--radius-full);
+      background: var(--text-primary);
+      color: #FFFFFF;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .nav-store-btn:hover {
+      background: #000000;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+    .nav-store-btn-android {
+      background: var(--bg-surface);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+    .nav-store-btn-android:hover {
+      background: var(--bg-subtle);
+      border-color: var(--text-secondary);
+    }
 
     /* Hero Section */
     .hero-section { padding: 64px 0 48px; text-align: center; }
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 18px;
+      gap: 10px;
+      padding: 7px 20px;
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-full);
       font-size: 13.5px;
       font-weight: 700;
-      color: var(--accent-sage);
+      color: var(--text-primary);
       margin-bottom: 24px;
       box-shadow: var(--shadow-sm);
     }
-    .hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-sage); }
+    .hero-badge-pulse-wrap {
+      display: inline-flex;
+      position: relative;
+      width: 10px;
+      height: 10px;
+    }
+    .hero-badge-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent-coral);
+    }
+    .hero-badge-ring {
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: var(--accent-coral);
+      animation: badgeRing 2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+    }
+    @keyframes badgeRing {
+      0% { transform: scale(0.8); opacity: 0.8; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+    .hero-badge-tag {
+      color: var(--accent-coral);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      font-size: 12px;
+      background: rgba(231,111,81,0.1);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+    }
+    .hero-badge-divider { color: var(--border-color); }
     .hero-h1 {
       font-size: clamp(38px, 6vw, 62px);
       font-weight: 800;
@@ -122,28 +187,84 @@
       flex-wrap: wrap;
       margin-bottom: 56px;
     }
-    .store-btn {
+
+    /* Premium Dual Store Badges */
+    .store-badge-btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 13px 26px;
-      background: var(--text-primary);
+      gap: 14px;
+      padding: 10px 24px;
+      background: #171514;
       color: #FFFFFF;
       border-radius: var(--radius-md);
       text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      min-width: 195px;
+      text-align: left;
+    }
+    .store-badge-btn:hover {
+      transform: translateY(-3px);
+      background: #000000;
+      box-shadow: 0 16px 32px -4px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.25);
+    }
+    .store-badge-icon {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .store-badge-icon img,
+    .store-badge-icon svg {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .store-badge-content {
+      display: flex;
+      flex-direction: column;
+    }
+    .store-badge-sub {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      opacity: 0.82;
+      line-height: 1.15;
+    }
+    .store-badge-title {
+      font-size: 18.5px;
       font-weight: 700;
-      font-size: 15px;
-      transition: all 0.2s ease;
-      box-shadow: var(--shadow-md);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif;
     }
-    .store-btn:hover { transform: translateY(-2px); background: #000000; box-shadow: var(--shadow-lg); }
-    .store-btn-sec {
-      background: var(--bg-surface);
-      color: var(--text-primary);
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-sm);
+    /* Smart Highlight for Recommended Platform */
+    .store-badge-btn.platform-recommended {
+      border-color: rgba(231,111,81,0.5);
+      box-shadow: 0 8px 24px -4px rgba(231,111,81,0.3);
     }
-    .store-btn-sec:hover { background: var(--bg-subtle); border-color: var(--text-secondary); box-shadow: var(--shadow-md); }
+    .store-badge-btn.platform-recommended::after {
+      content: 'YOUR DEVICE';
+      position: absolute;
+      top: -9px;
+      right: 12px;
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      background: var(--accent-coral);
+      color: #FFFFFF;
+      padding: 1px 7px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 2px 6px rgba(231,111,81,0.4);
+    }
 
     /* Showcase Frame */
     .showcase-container {
@@ -261,30 +382,55 @@
         <a href="#features" class="nav-link">Features</a>
         <a href="privacy/" class="nav-link">Privacy</a>
         <a href="terms/" class="nav-link">Terms</a>
-        <a href="https://play.google.com/store/apps/details?id=com.junpapapo.modo" class="nav-cta" target="_blank" rel="noopener">
-          <span>Get Modo</span> →
-        </a>
+        <div class="nav-store-group">
+          <a href="https://apps.apple.com/us/app/modo-notes-calendar-widget/id6809727545" class="nav-store-btn" target="_blank" rel="noopener" title="Download on Apple App Store">
+            <img src="asset/apple_logo_white.svg" alt="" style="width: 14px; height: 14px; object-fit: contain;">
+            <span>iOS</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.junpapapo.modo" class="nav-store-btn nav-store-btn-android" target="_blank" rel="noopener" title="Get it on Google Play">
+            <img src="asset/google_play_logo.svg" alt="" style="width: 13px; height: 13px; object-fit: contain;">
+            <span>Android</span>
+          </a>
+        </div>
       </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-badge">
-        <span class="hero-badge-dot"></span>
-        <span>100% On-Device Local SQLite Architecture</span>
+        <span class="hero-badge-pulse-wrap">
+          <span class="hero-badge-ring"></span>
+          <span class="hero-badge-dot"></span>
+        </span>
+        <span class="hero-badge-tag">NOW ON IOS & ANDROID</span>
+        <span class="hero-badge-divider">•</span>
+        <span>100% On-Device Privacy</span>
       </div>
       <h1 class="hero-h1">Mindful Notes,<br><span>Effortless Clarity.</span></h1>
       <p class="hero-p">
         A calm, distraction-free smart note application with instant voice memos, camera barcode/document scanning, customizable live widgets, and absolute data sovereignty.
       </p>
-      <div class="cta-buttons">
-        <a href="https://play.google.com/store/apps/details?id=com.junpapapo.modo" class="store-btn" target="_blank" rel="noopener">
-          <img src="asset/icons/icon_home.webp" alt="" style="width: 20px; height: 20px;">
-          <span>Google Play Store</span>
+      <div class="cta-buttons" id="download">
+        <!-- Apple App Store Badge -->
+        <a href="https://apps.apple.com/us/app/modo-notes-calendar-widget/id6809727545" class="store-badge-btn" target="_blank" rel="noopener" id="btn-app-store">
+          <div class="store-badge-icon">
+            <img src="asset/apple_logo_white.svg" alt="Apple Logo">
+          </div>
+          <div class="store-badge-content">
+            <span class="store-badge-sub">Download on the</span>
+            <span class="store-badge-title">App Store</span>
+          </div>
         </a>
-        <a href="privacy/" class="store-btn store-btn-sec">
-          <img src="asset/icons/icon_shield.webp" alt="" style="width: 20px; height: 20px;">
-          <span>Privacy & Terms Policy</span>
+
+        <!-- Google Play Store Badge -->
+        <a href="https://play.google.com/store/apps/details?id=com.junpapapo.modo" class="store-badge-btn" target="_blank" rel="noopener" id="btn-google-play">
+          <div class="store-badge-icon">
+            <img src="asset/google_play_logo.svg" alt="Google Play Logo">
+          </div>
+          <div class="store-badge-content">
+            <span class="store-badge-sub">GET IT ON</span>
+            <span class="store-badge-title">Google Play</span>
+          </div>
         </a>
       </div>
 
@@ -371,10 +517,32 @@
     <div class="banner-box">
       <h2 class="banner-title">Your thoughts belong solely to you.</h2>
       <p class="banner-desc">No mandatory accounts, no telemetry, and no cloud subscriptions to get started. Just open Modo and capture what matters in complete tranquility.</p>
-      <a href="privacy/" class="banner-cta">
-        <img src="asset/icons/icon_shield.webp" alt="" style="width: 18px; height: 18px;">
-        <span>Read Our Privacy Guarantee</span>
-      </a>
+      <div class="cta-buttons" style="margin-bottom: 24px;">
+        <a href="https://apps.apple.com/us/app/modo-notes-calendar-widget/id6809727545" class="store-badge-btn" target="_blank" rel="noopener" style="background: rgba(0,0,0,0.5); backdrop-filter: blur(12px); border-color: rgba(255,255,255,0.2);">
+          <div class="store-badge-icon">
+            <img src="asset/apple_logo_white.svg" alt="Apple Logo">
+          </div>
+          <div class="store-badge-content">
+            <span class="store-badge-sub">Download on the</span>
+            <span class="store-badge-title">App Store</span>
+          </div>
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=com.junpapapo.modo" class="store-badge-btn" target="_blank" rel="noopener" style="background: rgba(0,0,0,0.5); backdrop-filter: blur(12px); border-color: rgba(255,255,255,0.2);">
+          <div class="store-badge-icon">
+            <img src="asset/google_play_logo.svg" alt="Google Play Logo">
+          </div>
+          <div class="store-badge-content">
+            <span class="store-badge-sub">GET IT ON</span>
+            <span class="store-badge-title">Google Play</span>
+          </div>
+        </a>
+      </div>
+      <div>
+        <a href="privacy/" style="color: rgba(255,255,255,0.8); font-size: 14px; text-decoration: underline; font-weight: 600;">
+          Read Our Privacy Guarantee & Terms →
+        </a>
+      </div>
     </div>
 
     <!-- Footer -->
@@ -392,5 +560,35 @@
       </div>
     </footer>
   </div>
+
+  <!-- Smart Device Detection & Routing Script -->
+  <script>
+    (function() {
+      var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      var isAndroid = /Android/.test(navigator.userAgent);
+
+      var navCta = document.getElementById('nav-smart-cta');
+      var iosStoreUrl = "https://apps.apple.com/us/app/modo-notes-calendar-widget/id6809727545";
+      var androidStoreUrl = "https://play.google.com/store/apps/details?id=com.junpapapo.modo";
+
+      if (isIOS) {
+        if (navCta) {
+          navCta.href = iosStoreUrl;
+          navCta.target = "_blank";
+          navCta.rel = "noopener";
+        }
+        var appStoreBtn = document.getElementById('btn-app-store');
+        if (appStoreBtn) appStoreBtn.classList.add('platform-recommended');
+      } else if (isAndroid) {
+        if (navCta) {
+          navCta.href = androidStoreUrl;
+          navCta.target = "_blank";
+          navCta.rel = "noopener";
+        }
+        var playBtn = document.getElementById('btn-google-play');
+        if (playBtn) playBtn.classList.add('platform-recommended');
+      }
+    })();
+  </script>
 </body>
 </html>
